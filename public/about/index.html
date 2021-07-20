@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form method="post" enctype="multipart/form-data" action="http://localhost:5000/file">
+        <div>
+          <label for="profile_pic">Choose file to upload</label>
+          <input type="file" id="profile_pic" name="book"
+              accept=".pdf">
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+        
+</body>
+<script>
+
+    console.log(`fetching`)
+
+    // onsubmit="sendPost(event)"
+    function sendPost(event) {
+        event.preventDefault()
+        fetch(`http://localhost:5000/`, {
+            method: "POST",
+            body: event.target.book.files[0],
+            headers: {
+                "Content-type": "application/pdf; charset=UTF-8"
+            }
+        }).then(async res => {
+            console.log(await res.json())
+        })
+
+    }
+</script>
+</html>

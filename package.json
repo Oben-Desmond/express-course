@@ -1,0 +1,20 @@
+{
+  "name": "express-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "nodemon": "^2.0.12",
+    "pdf-text-extract": "^1.5.0",
+    "pdfreader": "^1.2.10"
+  }
+}
